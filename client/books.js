@@ -2,13 +2,12 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const catSchema = new Schema({
-  name: String,
-  color: String,
-  hasClaws: Boolean,
-  location: String,
+const bookSchema = new Schema({
+  title: String,
+  description: String,
+  status: Boolean,
 });
 
-const Cat = mongoose.model("Cat", catSchema);
+const Book = mongoose.model("Book", bookSchema);
 
-module.exports = Cat;
+module.exports = Book;

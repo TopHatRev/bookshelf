@@ -17,8 +17,8 @@ app.get("/book", async (request, response) => {
 
   // try to do this code, but if it errors, instead of crashing the server, stop, and move to the catch
   try {
-    const cats = await Book.find(request.query);
-    response.status(200).json(cats);
+    const book = await Book.find(request.query);
+    response.status(200).json(book);
   } catch (error) {
     console.log(error);
     response.status(404).json(error);

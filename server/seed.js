@@ -8,12 +8,21 @@ mongoose.connect(process.env.DATABASE_URL);
 async function seed() {
   // create a new instance of a cat object and add to the DB
   await Book.create({
-    name: "Dusty Blackwell",
-    author: "black",
-    releaseYear: "2020",
-    countryOfOrigin: "Norwich",
+    title: "Gone",
+    description: "action book",
+    status: "yes",
   });
-  console.log("Created a new cat");
+  await Book.create({
+    name: "American psycho",
+    description: "rich man does bad",
+    status: "yes",
+  });
+  await Book.create({
+    name: "Salo or the 120 days of sodom",
+    description: "4 rich men buy people",
+    status: "yes",
+  });
+  console.log("Created a new book");
 
   mongoose.disconnect();
 }
