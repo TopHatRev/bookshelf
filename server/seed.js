@@ -13,13 +13,14 @@ async function seed() {
     status: "yes",
   });
   await Book.create({
-    title: "american Psycho",
-    description: "mean rich guy",
+    name: "American psycho",
+    description: "rich man does bad",
     status: "yes",
   });
   await Book.create({
-    title: "Salo of the 120 days of sodom",
-    description: "4 rich men buy humans",
+    name: "Salo or the 120 days of sodom",
+    description: "4 rich men buy people",
+
     status: "yes",
   });
   console.log("Created a new book");
