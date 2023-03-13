@@ -20,6 +20,7 @@ async function seed() {
   await Book.create({
     name: "Salo or the 120 days of sodom",
     description: "4 rich men buy people",
+
     status: "yes",
   });
   console.log("Created a new book");

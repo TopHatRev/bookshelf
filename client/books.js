@@ -8,6 +8,7 @@ const bookSchema = new Schema({
   status: Boolean,
 });
 
+
 const Book = mongoose.model("Book", bookSchema);
 
 module.exports = Book;
