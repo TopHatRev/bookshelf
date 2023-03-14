@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const Book = require("./models/book");
+const Book = require("./books");
 
 mongoose.connect(process.env.DATABASE_URL);
 
@@ -15,21 +15,6 @@ async function seed() {
     description: "action book",
     status: "yes",
   });
-<<<<<<< HEAD
-
-=======
-  await Book.create({
-    name: "American psycho",
-    description: "rich man does bad",
-    status: "yes",
-  });
-  await Book.create({
-    name: "Salo or the 120 days of sodom",
-    description: "4 rich men buy people",
-
-    status: "yes",
-  });
->>>>>>> ca7d637f4c59c3f6dfa942f02ebda938d184a04e
   console.log("Created a new book");
 
   mongoose.disconnect();
