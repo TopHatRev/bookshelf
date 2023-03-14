@@ -15,7 +15,6 @@ async function seed() {
     description: "action book",
     status: "yes",
   });
-
   console.log("Created a new book");
 
   mongoose.disconnect();
