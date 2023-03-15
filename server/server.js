@@ -10,7 +10,7 @@ const app = express();
 app.use(cors());
 app.use(bp.json()); // allows us access to the request.body
 
-// connect to the databse (pretty important step)
+// connect to the database (pretty important step)
 mongoose.connect(process.env.DATABASE_URL);
 
 // READ
