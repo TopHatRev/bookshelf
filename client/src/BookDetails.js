@@ -22,7 +22,7 @@ export default function BookDetails() {
   async function getBook() {
     const API = `http://localhost:8080/books?_id=${id}`;
     const res = await axios.get(API);
-    setCat(res.data[0]);
+    setBook(res.data[0]);
   }
 
   function handleChange(event) {
@@ -53,7 +53,7 @@ export default function BookDetails() {
       <p>{book.location}</p>
       <p>{book.color}</p>
       <h3>Update details of Cat</h3>
-      <form onSubmit={handleUpdateCat}>
+      <form onSubmit={handleUpdateBook}>
         <input name="title" value={form.title} placeholder={book.title} onChange={handleChange} />
         <input name="location" value={form.author} placeholder={book.author} onChange={handleChange} />
         <input name="color" value={form.year} placeholder={book.year} onChange={handleChange} />
