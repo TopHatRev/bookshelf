@@ -1,19 +1,7 @@
-export default function Home({
-  handleLocation,
-  countryOfOrigin,
-  books,
-  deleteBook,
-  handleAddBook,
-  form,
-  handleChange,
-}) {
+export default function Home({ handleLocation, countryOfOrigin, books, deleteBook, handleAddBook, form, handleChange }) {
   return (
     <div>
-      <input
-        onChange={handleLocation}
-        value={countryOfOrigin}
-        placeholder="Filter by Location"
-      />
+      <input onChange={handleLocation} value={countryOfOrigin} placeholder="Filter by Location" />
       {books.map((book, index) => {
         return (
           <div key={index}>
@@ -30,19 +18,19 @@ export default function Home({
       <form onSubmit={handleAddBook}>
         <input
           title="title"
-          value={form.title}
+          // value={form.title}
           onChange={handleChange}
           placeholder="Name"
         />
         <input
           title="color"
-          value={form.author}
+          // value={form.author}
           onChange={handleChange}
           placeholder="Color"
         />
         <input
           title="countryOfOrigin"
-          value={form.countryOfOrigin}
+          // value={form.countryOfOrigin}
           onChange={handleChange}
           placeholder="Location"
         />
