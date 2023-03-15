@@ -26,7 +26,14 @@ export default function BookDetails() {
   }
 
   function handleChange(event) {
-    setForm({ ...form, [event.target.name]: event.target.value });
+    // setForm({ ...form, [event.target.name]: event.target.value });
+    const { name, value, type, checked } = event.target;
+    setForm((prevForm) => {
+      return {
+        ...prevForm,
+        [name]: type === "checkbox" ? checked : value,
+      };
+    });
   }
 
   async function handleUpdateBook(event) {
