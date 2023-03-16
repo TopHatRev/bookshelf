@@ -20,7 +20,7 @@ export default function BookDetails() {
   }, []);
 
   async function getBook() {
-    const API = `http://localhost:8080/books?_id=${id}`;
+    const API = `http://localhost:8080/book?_id=${id}`;
     const res = await axios.get(API);
     setBook(res.data[0]);
   }
@@ -47,7 +47,7 @@ export default function BookDetails() {
       }
     }
     // so we end up with a body object which is only the fields the user has type in
-    const API = `http://localhost:8080/books/${id}`;
+    const API = `http://localhost:8080/book/${id}`;
     await axios.put(API, body);
 
     const newBook = { ...book, ...body };

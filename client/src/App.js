@@ -22,7 +22,7 @@ function App() {
   }, [location]);
 
   async function getBooks() {
-    let API = "http://localhost:8080/books";
+    let API = "http://localhost:8080/book";
 
     if (location !== "") {
       API = API + "?location=" + location;
@@ -41,7 +41,7 @@ function App() {
 
   async function handleAddBook(event) {
     event.preventDefault();
-    const API = "http://localhost:8080/books";
+    const API = "http://localhost:8080/book";
     const res = await axios.post(API, form);
 
     // add our new cat to the page
@@ -62,7 +62,7 @@ function App() {
   async function deleteBook(id, name) {
     const confirmDelete = window.confirm(`Are you sure you want to permantently delete ${name}?`);
     if (confirmDelete) {
-      const API = `http://localhost:8080/books/${id}`;
+      const API = `http://localhost:8080/book/${id}`;
       const res = await axios.delete(API);
       console.log(res);
       getBooks();
@@ -81,14 +81,14 @@ function App() {
                 handleLocation={handleLocation}
                 location={location}
                 books={books}
-                deleteCat={deleteBook}
-                handleAddCat={handleAddBook}
+                deleteBook={deleteBook}
+                handleAddBook={handleAddBook}
                 form={form}
                 handleChange={handleChange}
               />
             }
           />
-          <Route path="/books/:id" element={<BookDetails />} />
+          <Route path="/book/:id" element={<BookDetails />} />
         </Routes>
         <p>This is the footer</p>
       </div>
